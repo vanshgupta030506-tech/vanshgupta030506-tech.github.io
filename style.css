@@ -5,7 +5,64 @@
 /* Load a font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
 
+:root {
+  --color-bg: #fbf6f6;
+  --color-bg-soft: #f1f1f1;
+  --color-text: #181717;
+  --color-heading: #de0000;
+  --color-link: #ff4343;
+  --color-header: #1d1f50;
+  --color-card-bg: #4618ea;
+  --color-card-bg-hover: #6845e5;
+  --color-card-shadow: #2f109c;
+  --color-card-shadow-strong: rgba(40, 14, 113, 1);
+  --color-border: #280e85;
+  --color-border-strong: #ff4343;
+  --color-surface: #f1f1f1;
+  --radius-card: 24px;
+  --shadow-card: 0px 6px 0px var(--color-card-shadow);
+  --shadow-card-hover: -3px 7px 0px 3px var(--color-card-shadow-strong);
+  --shadow-card-soft: -3px 5px 0px 3px var(--color-card-shadow-strong);
+}
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #161414;
+    --color-bg-soft: #1d1a1a;
+    --color-text: #dcc4c4;
+    --color-heading: #ff6b6b;
+    --color-header: #d9dcff;
+    --color-surface: #1d1a1a;
+    --color-card-shadow-strong: rgba(160, 129, 255, 0.9);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 12px;
+  position: relative;
+  gap: 0px;
+  background: var(--color-card-bg);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-card);
+}
+
+.card:hover {
+  transition: all 0.5s ease-in-out;
+  background: var(--color-card-bg-hover);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.border {
+  border: 4px solid var(--color-border);
+}
+
+.shadow {
+  box-shadow: var(--shadow-card-soft);
+}
 /* Rules for the whole page */
 
 body {
@@ -13,8 +70,8 @@ body {
   font-size: 24px;
   font-weight: 900;
   line-height: 1.6;
-  background: ##303030;   /* page background color — try changing this! */
-  color: #000000;        /* text color */
+  background: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
   text-align: Left;
   text-indent: 44px;
@@ -25,31 +82,32 @@ body {
 
 /* Headings */
 
-h1{
+h1 {
   font-size: 40px;
   font-family: "Retrograde", serif;
   Font-weight: 900;
-  color: #de0000;
+  color: var(--color-heading);
+  margin-block-end: 0;
 }
 
 h2 {
   font-size: 40px;
   font-family: "IBM Plex Mono", serif;
   Font-weight: 900;
-  color: #de0000;
+  color: var(--color-heading);
 }
 
 h3 {
   font-size: 40px;
   font-family: "Times New Roman", serif;
   Font-weight: 900;
-  color: #de0000;
+  color: var(--color-heading);
 }
 
 /* Links */
 
 a {
-  color: #FF4343;        /* the accent color */
+  color: var(--color-link);
 }
 
 
@@ -63,7 +121,7 @@ header {
 }
 
 .header-text {
-  color: #1D1F50;
+  color: var(--color-header);
   text-decoration: none;
 }
 
@@ -74,7 +132,7 @@ main {
   max-width: 600px;
   margin: auto;
   padding: 20px 40px 40px 40px;
-  background: #ffffff;
+  background: var(--color-surface);
   border-radius: 8px;
 }
 
@@ -99,7 +157,7 @@ main img {
 /* Quotes */
 
 blockquote {
-  border-left: 4px solid #FF4343;
+  border-left: 4px solid var(--color-border-strong);
   margin-left: 0;
   padding-left: 16px;
   font-size: 120%;
@@ -120,7 +178,7 @@ footer {
 /* The beating heart */
 
 .heart {
-  color: #FF4343;
+  color: var(--color-link);
   animation: beat 1s infinite;
 }
 
@@ -134,7 +192,7 @@ footer {
 @media only screen and (max-width: 600px) {
 
   body {
-    background: #ffffff;
+    background: var(--color-bg-soft);
   }
 
   main {
