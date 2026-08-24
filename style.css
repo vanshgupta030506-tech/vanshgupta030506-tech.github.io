@@ -1,203 +1,470 @@
-/* This file controls how everything LOOKS.
-   Change a value, save, and refresh your browser to see what happens. */
-
-
-/* Load a font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
-
 :root {
-  --color-bg: #fbf6f6;
-  --color-bg-soft: #f1f1f1;
-  --color-text: #181717;
-  --color-heading: #de0000;
-  --color-link: #ff4343;
-  --color-header: #1d1f50;
-  --color-card-bg: #4618ea;
-  --color-card-bg-hover: #6845e5;
-  --color-card-shadow: #2f109c;
-  --color-card-shadow-strong: rgba(40, 14, 113, 1);
-  --color-border: #280e85;
-  --color-border-strong: #ff4343;
-  --color-surface: #f1f1f1;
-  --radius-card: 24px;
-  --shadow-card: 0px 6px 0px var(--color-card-shadow);
-  --shadow-card-hover: -3px 7px 0px 3px var(--color-card-shadow-strong);
-  --shadow-card-soft: -3px 5px 0px 3px var(--color-card-shadow-strong);
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --text: #f5f5f5;
+  --muted: #c4c7c8;
+  --line: rgba(255, 255, 255, 0.88);
+  --soft-line: #444748;
+  --shadow: #404040;
+  --radius-lg: 24px;
+  --radius-md: 20px;
+  --radius-sm: 8px;
+  --shell: min(1152px, calc(100vw - 48px));
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #161414;
-    --color-bg-soft: #1d1a1a;
-    --color-text: #dcc4c4;
-    --color-heading: #ff6b6b;
-    --color-header: #d9dcff;
-    --color-surface: #1d1a1a;
-    --color-card-shadow-strong: rgba(160, 129, 255, 0.9);
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.shell {
+  width: var(--shell);
+  margin: 0 auto;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar__inner {
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font: 700 0.875rem/1 "IBM Plex Mono", monospace;
+  letter-spacing: 0.14em;
+}
+
+.navlink,
+.brand {
+  padding: 8px 0;
+}
+
+.section {
+  border-bottom: 1px solid var(--line);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 451px;
+  gap: 32px;
+  align-items: center;
+  padding: 140px 0 80px;
+}
+
+.hero__copy {
+  max-width: 560px;
+}
+
+.eyebrow {
+  margin: 0 0 40px;
+  font: 700 2rem/0.75 "IBM Plex Mono", monospace;
+  letter-spacing: 0.06em;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+h1 {
+  font-size: clamp(1.75rem, 2.2vw, 3rem);
+  line-height: 1.3;
+  font-weight: 500;
+  max-width: 32ch;
+}
+
+.lede {
+  margin-top: 24px;
+  color: var(--muted);
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 40ch;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid #8e9192;
+  border-radius: var(--radius-sm);
+  padding: 17px 25px;
+  box-shadow: 0 5px 0 var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  white-space: nowrap;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 0 var(--shadow);
+}
+
+.button--primary {
+  margin-top: 32px;
+  background: #000;
+}
+
+.button--secondary {
+  padding-inline: 22px;
+  gap: 0.6rem;
+}
+
+.hero__art {
+  position: relative;
+  height: 428px;
+}
+
+.sketch {
+  position: absolute;
+  border: 3px solid #fff;
+}
+
+.sketch--pencil {
+  width: 58px;
+  height: 14px;
+  border-radius: 999px;
+  right: 160px;
+  top: 58px;
+  transform: rotate(-49deg);
+  border-left: 0;
+  border-bottom: 0;
+}
+
+.sketch--ellipse {
+  width: 71px;
+  height: 24px;
+  border-radius: 50%;
+  right: 82px;
+  top: 108px;
+  transform: rotate(-7deg);
+}
+
+.sketch--cursor {
+  width: 26px;
+  height: 26px;
+  right: 18px;
+  top: 99px;
+  border-left: 0;
+  border-top: 0;
+  transform: rotate(15deg);
+}
+
+.sketch--bubble {
+  right: 0;
+  bottom: 48px;
+  padding: 28px 36px 24px 34px;
+  border-radius: 50% / 44%;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 1.25rem;
+  font-style: italic;
+  font-weight: 700;
+  transform: rotate(-6deg);
+  text-transform: lowercase;
+}
+
+.sketch--bubble::after {
+  content: "";
+  position: absolute;
+  right: 24px;
+  bottom: -14px;
+  width: 28px;
+  height: 28px;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  transform: skewX(-28deg) rotate(18deg);
+}
+
+.section__heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 0;
+}
+
+.section__rule {
+  width: 24px;
+  height: 1px;
+  background: #444748;
+}
+
+.section__heading h2 {
+  color: var(--muted);
+  font: 700 1.5rem/0.75 "Inter", sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section--about {
+  padding-bottom: 80px;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 247px minmax(0, 560px);
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+  padding-bottom: 10px;
+}
+
+.about__photo {
+  width: 247px;
+  height: 308px;
+  margin: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about__text h3,
+.card h3,
+.cta h2,
+.footer h2 {
+  font-size: 1.5rem;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.about__text p,
+.card p,
+.cta p,
+.footer p {
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.about__text {
+  display: grid;
+  gap: 24px;
+  max-width: 560px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px;
+  padding-bottom: 80px;
 }
 
 .card {
   display: flex;
-  flex-direction: column;
+  gap: 20px;
   align-items: flex-start;
-  padding: 12px;
+  padding: 25px;
+  background: #000;
+  border: 1px solid var(--soft-line);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 0 var(--shadow);
+}
+
+.card__icon {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 auto;
+}
+
+.card__icon--product {
+  width: 25px;
+  height: 27px;
+}
+
+.card__icon--visual {
+  width: 29px;
+  height: 20px;
+}
+
+.card h3 {
+  font-size: 1.125rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+}
+
+.card p {
+  margin-top: 8px;
+  font-size: 0.875rem;
+  line-height: 1.43;
+}
+
+.cta-wrap {
   position: relative;
-  gap: 0px;
-  background: var(--color-card-bg);
-  box-shadow: var(--shadow-card);
-  border-radius: var(--radius-card);
+  padding: 90px 0 80px;
 }
 
-.card:hover {
-  transition: all 0.5s ease-in-out;
-  background: var(--color-card-bg-hover);
-  border-radius: var(--radius-card);
-  box-shadow: var(--shadow-card-hover);
+.cta {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding: 40px;
+  border: 1px solid #8e9192;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 0 var(--shadow);
+  background: #000;
 }
 
-.border {
-  border: 4px solid var(--color-border);
+.cta p {
+  max-width: 33ch;
+  margin-top: 24px;
 }
 
-.shadow {
-  box-shadow: var(--shadow-card-soft);
-}
-/* Rules for the whole page */
-
-body {
-  font-family: "IBM Plex Mono", sans-serif;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 1.6;
-  background: var(--color-bg);
-  color: var(--color-text);
-  margin: 0;
-  text-align: Left;
-  text-indent: 44px;
-  letter-spacing: 0.05em;
-  line-height: 1.6em;
+.cta-decoration {
+  position: absolute;
+  top: 50%;
+  width: 110px;
+  height: 110px;
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  border-right: 0;
+  border-bottom: 0;
+  transform: translateY(-50%) rotate(45deg);
+  opacity: 0.7;
 }
 
-
-/* Headings */
-
-h1 {
-  font-size: 40px;
-  font-family: "Retrograde", serif;
-  Font-weight: 900;
-  color: var(--color-heading);
-  margin-block-end: 0;
+.cta-decoration--left {
+  left: -15px;
 }
 
-h2 {
-  font-size: 40px;
-  font-family: "IBM Plex Mono", serif;
-  Font-weight: 900;
-  color: var(--color-heading);
+.cta-decoration--right {
+  right: -15px;
+  transform: translateY(-50%) rotate(225deg);
 }
 
-h3 {
-  font-size: 40px;
-  font-family: "Times New Roman", serif;
-  Font-weight: 900;
-  color: var(--color-heading);
+.footer {
+  padding: 80px 0 0;
+  border-bottom: 0;
 }
 
-/* Links */
-
-a {
-  color: var(--color-link);
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
 }
 
-
-/* The bar at the top */
-
-header {
-  max-width: 640px;
-  margin: auto;
-  padding: 20px;
-  font-weight: 700;
+.footer__links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
-.header-text {
-  color: var(--color-header);
-  text-decoration: none;
+.footer__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 0 16px;
+  margin-top: 56px;
+  border-top: 1px solid rgba(68, 71, 72, 0.78);
+  font-size: 0.875rem;
+  color: var(--muted);
 }
 
-
-/* The white box that holds your content */
-
-main {
-  max-width: 600px;
-  margin: auto;
-  padding: 20px 40px 40px 40px;
-  background: var(--color-surface);
-  border-radius: 8px;
-}
-
-
-/* Pictures never overflow the box */
-
-main img {
-  max-width: 100%;
-  border-radius: 4px;
-}
-
-.image-caption {
-  font-style: italic;
-  opacity: 0.6;
-}
-
-.date {
-  opacity: 0.6;
-}
-
-
-/* Quotes */
-
-blockquote {
-  border-left: 4px solid var(--color-border-strong);
-  margin-left: 0;
-  padding-left: 16px;
-  font-size: 120%;
-}
-
-
-/* The footer at the bottom */
-
-footer {
-  max-width: 640px;
-  margin: auto;
-  padding: 20px;
-  text-align: center;
-  font-size: 80%;
-}
-
-
-/* The beating heart */
-
-.heart {
-  color: var(--color-link);
-  animation: beat 1s infinite;
-}
-
-@keyframes beat {
-  50% { opacity: 0.5; }
-}
-
-
-/* Anything below this only applies to small screens (phones) */
-
-@media only screen and (max-width: 600px) {
-
-  body {
-    background: var(--color-bg-soft);
+@media (max-width: 1200px) {
+  :root {
+    --shell: min(100vw - 40px, 1152px);
   }
 
-  main {
-    padding: 10px 5% 40px 5%;
-    border-radius: 0;
+  .hero {
+    grid-template-columns: 1fr;
   }
 
+  .hero__art {
+    justify-self: center;
+    width: min(451px, 100%);
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    justify-items: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  :root {
+    --shell: calc(100vw - 24px);
+  }
+
+  .hero {
+    padding: 72px 0 56px;
+  }
+
+  .eyebrow {
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+  }
+
+  .hero__art {
+    height: 260px;
+  }
+
+  .section__heading {
+    padding: 24px 0;
+  }
+
+  .about__photo {
+    width: min(100%, 320px);
+    height: auto;
+    aspect-ratio: 246.7 / 308.3;
+  }
+
+  .cta,
+  .card {
+    padding: 20px;
+  }
+
+  .footer__top,
+  .footer__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .footer__links {
+    justify-content: flex-start;
+  }
 }

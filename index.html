@@ -1,55 +1,145 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <!-- The title shows up in the browser tab -->
-  <title>My Website</title>
-
-  <!-- These two lines connect your CSS and JavaScript files -->
-  <link rel="stylesheet" href="style.css">
-  <script src="scripts.js" defer></script>
-
-  <!-- This makes the page look right on phones -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="favicon.ico">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vansh Gupta | Digital Product Designer</title>
+  <meta
+    name="description"
+    content="Portfolio homepage for Vansh Gupta, a digital product designer focused on clear, thoughtful experiences."
+  />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-
-  <header>
-    <a href="index.html" class="header-text">My Website</a>
+  <header class="topbar">
+    <div class="shell topbar__inner">
+      <a class="brand" href="#home">VANSH GUPTA</a>
+      <a class="navlink" href="#about">ABOUT</a>
+    </div>
   </header>
 
-  <main>
-    <div class="card border shadow">
-      <h1>Hi, I'm Vansh Gupta 👋</h1>
-      <p>Welcome to my website.Hope you are doing well!. I made it myself, starting from the web-starter kit.</p>
-</div>
+  <main id="home">
+    <section class="hero section shell">
+      <div class="hero__copy">
+        <p class="eyebrow">Hi, I'm Vansh Gupta!</p>
+        <h1>I'm a Digital Product Designer who enjoys turning ideas into simple, thoughtful experiences.</h1>
+        <p class="lede">
+          Currently studying Digital Product Design at École Intuit.Lab Delhi and exploring UI/UX, product design and visual design.
+        </p>
+        <a class="button button--primary" href="#portfolio">
+          <span>Explore my portfolio</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
 
-    <h2>About me</h2>
-    <p>Write a few lines about yourself here. Who are you? What do you like making?</p>
+      <div class="hero__art" aria-hidden="true">
+        <div class="sketch sketch--pencil"></div>
+        <div class="sketch sketch--ellipse"></div>
+        <div class="sketch sketch--cursor"></div>
+        <div class="sketch sketch--bubble">let create!</div>
+      </div>
+    </section>
 
-    <h2>Things I like</h2>
-    <!-- This is a list. Each <li> is one item. -->
-    <ul>
-      <li>Replace this with something you like</li>
-      <li>And this</li>
-      <li>This too</li>
-    </ul>
+    <section class="section shell section--about" id="about">
+      <div class="section__heading">
+        <span class="section__rule"></span>
+        <h2>A LITTLE ABOUT ME</h2>
+      </div>
 
-    <h2>An article I wrote</h2>
-    <!-- This link goes to the other page in this folder -->
-    <p><a href="article.html">Read my first article →</a></p>
+      <div class="about">
+        <figure class="about__photo">
+          <img src="tennis.JPG" alt="Portrait of Vansh Gupta" />
+        </figure>
+        <div class="about__text">
+          <h3>A curious designer who likes keeping things a bit simple.</h3>
+          <p>
+            I’m a curious designer who enjoys understanding how people interact with products and turning those insights into clear, useful and engaging experiences.
+          </p>
+          <p>
+            I like keeping things simple, but I also believe good design should have a little personality.
+          </p>
+        </div>
+      </div>
+    </section>
 
+    <section class="section shell section--enjoy" id="portfolio">
+      <div class="section__heading">
+        <span class="section__rule"></span>
+        <h2>What i Enjoy</h2>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <img class="card__icon" alt="" src="https://www.figma.com/api/mcp/asset/d7d2f26f-284b-40f7-9503-484d69c9a001.svg" />
+          <div>
+            <h3>UI/UX</h3>
+            <p>Designing interfaces and experiences that feel intuitive and easy to use.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card__icon card__icon--product" alt="" src="https://www.figma.com/api/mcp/asset/30d93550-5766-4306-b721-13b525e343f7.svg" />
+          <div>
+            <h3>PRODUCT DESIGN</h3>
+            <p>Understanding problems and turning them into meaningful digital products.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card__icon card__icon--visual" alt="" src="https://www.figma.com/api/mcp/asset/6b6e3174-26a3-4e13-aa74-f250fe2b8654.svg" />
+          <div>
+            <h3>VISUAL DESIGN</h3>
+            <p>Playing with typography, layouts, visual systems and details.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section shell cta-wrap">
+      <div class="cta-decoration cta-decoration--left" aria-hidden="true"></div>
+      <div class="cta-decoration cta-decoration--right" aria-hidden="true"></div>
+      <div class="cta">
+        <div>
+          <h2>Want to see what I make?</h2>
+          <p>I’ve got a few things I’ve been working on. Explore them over on my portfolio.</p>
+        </div>
+        <a class="button button--primary" href="#contact">
+          <span>Explore my portfolio</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <!-- Change this link to your own profile -->
-    <a href="https://github.com">My GitHub</a>
-    <br>
-    Made with <span class="heart">&hearts;</span> by me
+  <footer class="footer section shell" id="contact">
+    <div class="footer__top">
+      <div>
+        <h2>Let's make something.</h2>
+        <p>Have a project, idea, or just want to say hi?</p>
+      </div>
+      <div class="footer__links">
+        <a class="button button--secondary" href="mailto:hello@example.com">
+          <span>✉</span>
+          <span>Email me</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a class="button button--secondary" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+          <span>in</span>
+          <span>LinkedIn</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© 2026 Vansh Gupta</p>
+      <p>Made with Luv <span aria-hidden="true">❤</span></p>
+    </div>
   </footer>
-
 </body>
-
 </html>
