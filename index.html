@@ -16,6 +16,7 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="style.css" />
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <header class="topbar">
@@ -33,17 +34,14 @@
         <p class="lede">
           Currently studying Digital Product Design at École Intuit.Lab Delhi and exploring UI/UX, product design and visual design.
         </p>
-        <a class="btn btn--primary" href="#portfolio">
+        <a class="btn btn--primary" href="https://exploredesignswithvansh.framer.website/" target="_blank" rel="noreferrer">
           <span>Explore my portfolio</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
 
       <div class="hero__art" aria-hidden="true">
-        <div class="sketch sketch--pencil"></div>
-        <div class="sketch sketch--ellipse"></div>
-        <div class="sketch sketch--cursor"></div>
-        <div class="sketch sketch--bubble">let create!</div>
+        <img class="hero__artwork" src="Landing section.svg" alt="" />
       </div>
     </section>
 
@@ -55,7 +53,7 @@
 
       <div class="about">
         <figure class="about__photo">
-          <img src="tennis.JPG" alt="Portrait of Vansh Gupta" />
+          <img src="VanshGupta_Portrait.JPG" alt="Portrait of Vansh Gupta" />
         </figure>
         <div class="about__text">
           <h3>A curious designer who likes keeping things a bit simple.</h3>
@@ -76,21 +74,21 @@
       </div>
 
       <div class="cards">
-        <article class="card">
+        <article class="card" data-mobile-observe>
           <img class="card__icon" alt="" src="https://www.figma.com/api/mcp/asset/d7d2f26f-284b-40f7-9503-484d69c9a001.svg" />
           <div>
             <h3>UI/UX</h3>
             <p>Designing interfaces and experiences that feel intuitive and easy to use.</p>
           </div>
         </article>
-        <article class="card">
+        <article class="card" data-mobile-observe>
           <img class="card__icon card__icon--product" alt="" src="https://www.figma.com/api/mcp/asset/30d93550-5766-4306-b721-13b525e343f7.svg" />
           <div>
             <h3>PRODUCT DESIGN</h3>
             <p>Understanding problems and turning them into meaningful digital products.</p>
           </div>
         </article>
-        <article class="card">
+        <article class="card" data-mobile-observe>
           <img class="card__icon card__icon--visual" alt="" src="https://www.figma.com/api/mcp/asset/6b6e3174-26a3-4e13-aa74-f250fe2b8654.svg" />
           <div>
             <h3>VISUAL DESIGN</h3>
@@ -101,14 +99,12 @@
     </section>
 
     <section class="section shell cta-wrap">
-      <div class="cta-decoration cta-decoration--left" aria-hidden="true"></div>
-      <div class="cta-decoration cta-decoration--right" aria-hidden="true"></div>
       <div class="cta">
         <div>
           <h2>Want to see what I make?</h2>
           <p>I’ve got a few things I’ve been working on. Explore them over on my portfolio.</p>
         </div>
-        <a class="btn btn--primary" href="#contact">
+        <a class="btn btn--primary" href="https://exploredesignswithvansh.framer.website/" target="_blank" rel="noreferrer">
           <span>Explore my portfolio</span>
           <span aria-hidden="true">↗</span>
         </a>
@@ -123,36 +119,22 @@
         <p>Have a project, idea, or just want to say hi?</p>
       </div>
       <div class="footer__links">
-        <a class="btn btn--secondary" href="mailto:hello@example.com">
-          <span>✉</span>
+        <a class="btn btn--secondary" href="mailto:exploredesignswithvansh@gmail.com">
+          <svg class="btn__icon btn__icon--mail" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4.5 7.5A2.5 2.5 0 0 1 7 5h10a2.5 2.5 0 0 1 2.5 2.5v9A2.5 2.5 0 0 1 17 19H7a2.5 2.5 0 0 1-2.5-2.5v-9Z" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linejoin="round"/>
+            <path d="M6 8l6 4.5L18 8" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6.5 16.5 10.8 13.7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+            <path d="M17.5 16.5 13.2 13.7" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"/>
+          </svg>
           <span>Email me</span>
           <span aria-hidden="true">↗</span>
         </a>
-        <a class="btn btn--secondary" href="https://www.linkedin.com" target="_blank" rel="noreferrer">
+        <a class="btn btn--secondary" href="https://www.linkedin.com/in/exploredesignswithvanshgupta/" target="_blank" rel="noreferrer">
           <span>in</span>
           <span>LinkedIn</span>
           <span aria-hidden="true">↗</span>
         </a>
       </div>
-    </div>
-
-    <div class="button-showcase" aria-label="Button states demo">
-      <a class="btn btn--primary" href="#home">
-        <span>Default</span>
-        <span aria-hidden="true">↗</span>
-      </a>
-      <a class="btn btn--primary is-hover" href="#home" aria-hidden="true" tabindex="-1">
-        <span>Hover</span>
-        <span aria-hidden="true">↗</span>
-      </a>
-      <a class="btn btn--primary is-pressed" href="#home" aria-hidden="true" tabindex="-1">
-        <span>Pressed</span>
-        <span aria-hidden="true">↗</span>
-      </a>
-      <button class="btn btn--primary" type="button" disabled>
-        <span>Disabled</span>
-        <span aria-hidden="true">↗</span>
-      </button>
     </div>
 
     <div class="footer__bottom">
