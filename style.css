@@ -344,7 +344,7 @@ h1 {
 .cta__art {
   position: absolute;
   top: 50%;
-  width: 620px;
+  width: 1200px;
   height: auto;
   transform: translateY(-50%);
   opacity: 0.75;
