@@ -494,11 +494,37 @@ h1 {
   border-bottom: 0;
 }
 
+.footer__meta {
+  display: grid;
+  gap: 18px;
+  padding-top: 36px;
+  padding-bottom: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.footer__time {
+  margin: 0;
+  max-width: 100%;
+  font: 700 clamp(1.25rem, 1.7vw, 3.25rem)/1.04 "IBM Plex Mono", monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.footer__coords {
+  margin: 0;
+  color: var(--muted);
+  font: 600 0.75rem/1.4 "IBM Plex Mono", monospace;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
 .footer__top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  padding-bottom: 60px;
 }
 
 .footer__links {
@@ -514,8 +540,7 @@ h1 {
   justify-content: space-between;
   gap: 24px;
   padding: 24px 0 16px;
-  margin-top: 56px;
-  border-top: 1px solid var(--line);
+  margin-top: 0;
   font-size: 0.875rem;
   color: var(--muted);
 }
