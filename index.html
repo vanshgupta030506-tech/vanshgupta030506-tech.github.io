@@ -144,8 +144,22 @@
     </div>
 
     <div class="footer__meta">
-      <p class="footer__time" id="live-time" aria-live="polite">IST Tuesday, September 1, 2026 at 11:38:56 AM</p>
-      <p class="footer__coords">28.6139° N, 77.2090° E • New Delhi, India</p>
+      <div class="footer__stamp">
+        <p class="footer__time" id="live-time" aria-live="polite">Loading local time...</p>
+        <p class="footer__coords" id="live-coordinates" aria-live="polite">Detecting location...</p>
+      </div>
+      <aside class="weather-card weather-card--loading" id="weather-card" role="button" tabindex="0" aria-expanded="false" aria-live="polite">
+        <span class="weather-card__label">Local weather</span>
+        <strong class="weather-card__temp" id="weather-temp">--°</strong>
+        <span class="weather-card__condition" id="weather-condition">Waiting for location</span>
+        <span class="weather-card__detail" id="weather-detail">Allow location access for live weather.</span>
+        <div class="weather-card__more" id="weather-more">
+          <span>Humidity <strong id="weather-humidity">--</strong></span>
+          <span>Precip <strong id="weather-precip">--</strong></span>
+          <span>Wind dir <strong id="weather-wind-direction">--</strong></span>
+          <span>Updated <strong id="weather-updated">--</strong></span>
+        </div>
+      </aside>
     </div>
 
     <div class="footer__bottom">
